@@ -43,7 +43,7 @@ local Tab = Window:CreateTab("Misc", nil) -- Title, Image
    Name = "Speed",
    Range = {0, 100},
    Increment = 10,
-   Suffix = "Bananas",
+   Suffix = "Speed",
    CurrentValue = 10,
    Flag = "Speed", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
@@ -54,22 +54,23 @@ local Tab = Window:CreateTab("Misc", nil) -- Title, Image
   local Button = Tab:CreateButton({
    Name = "Button Example",
    Callback = function()
-     local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
+local Player = game:GetService'Players'.LocalPlayer;
+local UIS = game:GetService'UserInputService';
 
-local canJump = true
-local jumpCooldown = 0.3 -- Cooldown time in seconds
+_G.JumpHeight = 50;
 
- local function onJumpRequest()
-	if canJump then
-		humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-		canJump = false
-		task.wait(jumpCooldown)
-		canJump = true
-	end
-end
+function Action(Object, Function) if Object ~= nil then Function(Object); end end
 
-game:GetService("UserInputService").JumpRequest:Connect(onJumpRequest)
+UIS.InputBegan:connect(function(UserInput)
+    if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+        Action(Player.Character.Humanoid, function(self)
+            if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+                Action(self.Parent.HumanoidRootPart, function(self)
+                    self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+                end)
+            end
+        end)
+    end
+end)
    end,
 })
