@@ -3,8 +3,8 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
    Name = "1t10b Secret Gag Script V1",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-   LoadingTitle = "Rayfield Interface Suite",
-   LoadingSubtitle = "by Sirius",
+   LoadingTitle = "1t10b Secret Gag Script V1",
+   LoadingSubtitle = "by 1t10b",
    ShowText = " ", -- for mobile users to unhide rayfield, change if you'd like
    Theme = "AmberGlow", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
