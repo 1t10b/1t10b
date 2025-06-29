@@ -25,7 +25,7 @@ local Window = Rayfield:CreateWindow({
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
 
-   KeySystem = true, -- Set this to true to use our key system
+   KeySystem = false, -- Set this to true to use our key system
    KeySettings = {
       Title = "1t10b Secret Gag Script V1",
       Subtitle = "Key System",
@@ -38,7 +38,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 local MainTab = Window:CreateTab("1t10b Secret Gag Script V1", nil) -- Title, Image
-local Section = Tab:CreateSection("Summer Harvest")
+local MainSection = Tab:CreateSection("Summer Harvest")
 local Section = Tab:CreateSection("Misc")
 
 local Slider = MiscTab:CreateSlider({
