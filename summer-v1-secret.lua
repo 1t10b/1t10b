@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "Rayfield Example Window",
+   Name = "1t10b Secret Gag Script V1",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Rayfield Interface Suite",
    LoadingSubtitle = "by Sirius",
@@ -37,9 +37,8 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local MainTab = Window:CreateTab("1t10b Secret Gag Script V1", nil) -- Title, Image
-local MainSection = Tab:CreateSection("Summer Harvest")
-local Section = Tab:CreateSection("Misc")
+local MainTab = Window:CreateTab("Summer Harvest", nil) -- Title, Image
+local Tab = Window:CreateTab("Misc", nil) -- Title, Image
 
 local Slider = MiscTab:CreateSlider({
    Name = "Speed",
