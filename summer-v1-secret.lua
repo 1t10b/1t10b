@@ -39,8 +39,7 @@ local Window = Rayfield:CreateWindow({
 
 local MainTab = Window:CreateTab("Summer Harvest", nil) -- Title, Image
 local Tab = Window:CreateTab("Misc", nil) -- Title, Image
-
-local Slider = Tab:CreateSlider({
+ local Slider = Tab:CreateSlider({
    Name = "Speed",
    Range = {0, 100},
    Increment = 10,
@@ -52,7 +51,7 @@ local Slider = Tab:CreateSlider({
    end,
 })
 
-local Button = Tab:CreateButton({
+  local Button = Tab:CreateButton({
    Name = "Button Example",
    Callback = function()
      local player = game.Players.LocalPlayer
